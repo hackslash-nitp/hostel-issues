@@ -1,0 +1,47 @@
+.nav{
+    height:10vh;
+    background-color:#3AA1FF;
+    box-sizing: border-box;
+    padding: 0 2vw;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.nav h1{
+  letter-spacing: 3px;
+}
+
+.activeLink{
+  border-radius:40px 40px 0 0;
+  background-color: lightblue;
+  height:8vh;
+  width:13vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: -2vh;
+  position: relative;
+} 
+
+.activeLink h3{
+  margin:0;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+
+.navLinks{
+  height:10vh;
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLinks h3{
+  color:white;
+  font-size:1.5rem;
+}
