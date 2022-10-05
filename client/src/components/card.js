@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/card.css";
+import "./card.css";
 
 function Card(props){
     var text = props.text;

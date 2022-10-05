@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./card.js";
-import "./styles/homeBody.css";
+import "./homeBody.css";
 
 function Home(){
    return <div>
