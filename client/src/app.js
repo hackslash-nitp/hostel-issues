@@ -22,4 +22,6 @@ function App(){
 
 }
 
+//This is some comment in the code.
+
 export default App;
