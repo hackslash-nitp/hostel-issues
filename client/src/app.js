@@ -5,6 +5,8 @@ import Status from "./components/status.js";
 import Complain from "./components/complain.js";
 import Help from "./components/help.js";
 import Login from "./components/login.js";
+import Profile from "./components/profile.js";
+
 
 import { BrowserRouter,Routes,Route} from "react-router-dom";
 
@@ -17,6 +19,7 @@ function App(){
         <Route path = "/complain" element = {<Complain/>}/>
         <Route path = "/help" element = {<Help/>}/>
         <Route path = "/login" element = {<Login/>}/>
+        <Route path = "/profile" element = {<Profile/>}/>
     </Routes>
     </BrowserRouter>
 
