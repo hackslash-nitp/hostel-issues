@@ -9,6 +9,7 @@ function Card(props){
      <h3>{text}</h3>
      <div className = "boxStatus" style = {{color:col}}>{num}</div>
    </div>
+   
 }
 
 export default Card;
