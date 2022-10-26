@@ -1,5 +1,4 @@
 .profile{
-   width:30vw;
    margin:5vh auto;
    text-align: center;
 }
@@ -16,10 +15,15 @@
 }
 
 .status{
-    height:40vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+@media only screen and (max-width: 900px){
+    .status{
+        flex-direction: column;
+    }
 }
 
 

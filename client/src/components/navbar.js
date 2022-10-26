@@ -28,10 +28,10 @@ function Navbar(){
    return <div className="nav">
      <h1><Link to = "/">Hostel Issues</Link></h1>
      <div className = "navLinks">
-     <div className={active===1?'activeLink':''}><h3><Link to = "/">Home</Link></h3></div>
-     <div className={active===2?'activeLink':''}><h3><Link to = "/status">Status</Link></h3></div>
-     <div className={active===3?'activeLink':''}><h3><Link to = "/complain">Complain</Link></h3></div>
-     <div className={active===4?'activeLink':''}><h3><Link to = "/help">Help</Link></h3></div>
+     <div className={active===1?'activeLink':'nonActive'}><h3><Link to = "/">Home</Link></h3></div>
+     <div className={active===2?'activeLink':'nonActive'}><h3><Link to = "/status">Status</Link></h3></div>
+     <div className={active===3?'activeLink':'nonActive'}><h3><Link to = "/complain">Complain</Link></h3></div>
+     <div className={active===4?'activeLink':'nonActive'}><h3><Link to = "/help">Help</Link></h3></div>
      </div>
      <div className = "account" onClick = {handleClick}>
       <img src = "https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg" alt = "user-avatar"/>

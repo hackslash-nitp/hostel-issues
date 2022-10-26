@@ -19,12 +19,19 @@
   width:13vw;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
   margin-bottom: -2vh;
 } 
 
-.activeLink h3{
-  margin:0;
+.activeLink h3 a{
+  font-size: 1.25rem;
+}
+
+.nonActive{
+  height:8vh;
+  width: 13vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a{
@@ -34,7 +41,7 @@ a{
 
 .navLinks{
   height:10vh;
-  width: 50vw;
+  width: 58vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
