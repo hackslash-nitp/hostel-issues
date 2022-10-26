@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from "../images/logo.png";
 import "./styles/navbar.css";
 
 function Navbar(){
@@ -27,7 +28,7 @@ function Navbar(){
    }
 
    return <div className="nav">
-     <h1><Link to = "/">Hostel Issues</Link></h1>
+     <h1 ><Link to = "/"><img className = "logo" src = {logo} alt = "logo"/></Link></h1>
      <div className = "navLinks">
      <div className={active===1?'activeLink':'nonActive'}><h3><Link to = "/">Home</Link></h3></div>
      <div className={active===2?'activeLink':'nonActive'}><h3><Link to = "/status">Status</Link></h3></div>

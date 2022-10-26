@@ -1,17 +1,21 @@
 .profile{
-   margin:5vh auto;
+   margin:3vh auto;
    text-align: center;
 }
 
 .avatar{
-    height:20vh;
-    width:auto;
+    height:12vw;
+    width:12vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .avatar img{
-    max-height: 100%;
-    max-width: 100%;
-    border-radius: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  border-radius: 50%;
 }
 
 .status{
@@ -23,6 +27,11 @@
 @media only screen and (max-width: 900px){
     .status{
         flex-direction: column;
+    }
+
+    .avatar{
+        height: 30vw;
+        width: 30vw;
     }
 }
 
