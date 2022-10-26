@@ -9,6 +9,7 @@
     border-radius:20px;
     background-color: #BDDFFF;
     text-align: center;
+    margin: 2rem;
 }
 
 
@@ -17,7 +18,7 @@
 }
 
 .boxStatus{
-    margin:0 auto;
+   
     height:70px;
     width:70px;
     font-size: 1.8rem;
