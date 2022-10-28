@@ -10,7 +10,7 @@ const Profile = () => {
       <form method="">
         <div className="row">
           <div className="col-md-4">
-            <img src={Profilepic} alr="shashank" />
+            <img src={Profilepic} alt="shashank" />
           </div>
           <div className="col-md-5 mt-5">
             <h5>SHASHANK YADAV</h5>
@@ -51,4 +51,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default Profile;
