@@ -1,0 +1,74 @@
+
+.container2{
+    margin-top: 2%;
+    margin-left: 20%;
+    width: 60%;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px #507e9a;
+    background-color: white;
+    
+}
+
+.container3{
+    margin-top: 6%;
+    margin-left: 20%;
+    border-radius: 2rem;
+    width: 60%;
+    box-shadow: 0 0 10px #507e9a;
+    background-color: white;
+}
+
+.signupPic{
+    margin-top: 10%;
+    width: 80%;
+    
+}
+
+.option{
+    display: flex;
+    position: relative;
+}
+span{
+    display: flex;
+    justify-content: right;
+}
+
+.sign_cont{
+    left: 8%;
+}
+
+input[type=text], input[type=email],input[type=number],input[type=password]{
+    width: 70%;
+    padding: 0.5rem .2rem;
+    margin: 1%;
+    border-color: white;
+    background-color: white;
+    border-radius: 5rem;
+}
+h3{
+    font-weight: bold;
+}
+
+.register{
+    right:8%;
+    margin-bottom: 3%;
+}
+
+.login{
+    right: 10%;
+    top: 5rem;
+}
+
+.log_pic{
+    width: 88%;
+    margin-bottom: -6%;
+}
+
+.loginbtn{
+    width: 25%;
+    margin-bottom: 30%;
+}
+.log_cont{
+    left: 8%;
+}
+

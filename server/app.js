@@ -14,19 +14,19 @@ app.use(express.json());
 app.use(require('./router/auth'));
 
 // middleware
-const middleware=(req,res,next)=>{c
-    console.log(`hello my middleware`);
-    next();
-}
+// const middleware=(req,res,next)=>{c
+//     console.log(`hello my middleware`);
+//     next();
+// }
 
 app.get('/',(req,res)=>{
     res.send("hello world from the server");
 });
 
-app.get('/about',middleware,(req,res)=>{
-    console.log("hello we are on the about")
-    res.send(`<h1>hello world from the server on about</h>`);
-})
+// app.get('/about',(req,res)=>{
+//     console.log("hello we are on the about")
+//     res.send(`<h1>hello world from the server on about</h>`);
+// })
 
 app.get('/contact',(req,res)=>{
     res.cookie("jwtoken","bhai")
