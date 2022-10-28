@@ -6,6 +6,7 @@ import Complain from "./components/complain.js";
 import Help from "./components/help.js";
 import Login from "./components/login.js";
 import Profile from "./components/profile.js";
+import Signup from "./components/signup.js";
 
 
 import { BrowserRouter,Routes,Route} from "react-router-dom";
@@ -19,6 +20,7 @@ function App(){
         <Route path = "/complain" element = {<Complain/>}/>
         <Route path = "/help" element = {<Help/>}/>
         <Route path = "/login" element = {<Login/>}/>
+        <Route path = "/signup" element = {<Signup/>}/>
         <Route path = "/profile" element = {<Profile/>}/>
     </Routes>
     </BrowserRouter>

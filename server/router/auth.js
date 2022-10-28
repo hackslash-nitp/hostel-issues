@@ -5,8 +5,12 @@ const express=require('express');
 const { estimatedDocumentCount } = require('../model/userSchema');
 const User = require('../model/userSchema');
 const router=express.Router();
+const jwt= require ("jsonwebtoken")
 const bcrypt=require("bcryptjs");
+const cookie=require ('cookie-parser')
 require("../model/userSchema")
+const authenticate =require("../middleware/authenticate");
+const cookieParser = require('cookie-parser');
 
 router.get('/',(req,res)=>{ 
     res.send(`hello world from the server router js by using the router part on our website`)
@@ -15,7 +19,7 @@ router.get('/',(req,res)=>{
 
 //// using promises
 // router.post('/register',(req,res)=>{
-//    const{name,email,phone,address,password,cpassword}=req.body;
+//    const{name,email,phone,work,password,cpassword}=req.body;
 //    if(!name || !email){
 //     return res.status(422).json({error:"plz filled the field properly"});
 //    }
@@ -24,7 +28,7 @@ router.get('/',(req,res)=>{
 //     if(userExist){
 //         return res.status(422).json({error:"user already exist"});
 //     }
-//     const user =new User({name,email,phone,address,password,cpassword});
+//     const user =new User({name,email,phone,work,password,cpassword});
 //     user.save().then(()=>{
 //         res.status(201).json({Message:"User registration successfull"});
 //     }).catch((e)=>{console.log(e);});
@@ -37,7 +41,7 @@ router.get('/',(req,res)=>{
 //// using async and await
 
 router.post('/register',async (req,res)=>{
-   const{name,email,phone,address,password,cpassword}=req.body;
+   const{name,email,phone,work,password,cpassword}=req.body;
    if(!name || !email){
     return res.status(422).json({error:"plz filled the field properly"});
    }
@@ -49,7 +53,7 @@ router.post('/register',async (req,res)=>{
         if(userExist){
             return res.status(422).json({error:"user already exist"});
         }
-        const user =new User({name,email,phone,address,password,cpassword});
+        const user =new User({name,email,phone,work,password,cpassword});
        const userRegistered= await user.save();
        if(userRegistered){
             res.status(201).json({Message:"User registration successfull"});
@@ -95,17 +99,17 @@ try {
 
 })
 
-
-
-
-
-
-
 // for the contact form where we find our inforamation for our neeed
 router.post("/contact",(req,res)=>{
-    const {name,email,phone,address,password,cpassword}=req.body;
+    const {name,email,phone,work,password,cpassword}=req.body;
     console.log(name,email)
 })
 
-
+// about page
+ router.use(cookieParser());
+router.get('/about',authenticate,(req,res)=>{
+        console.log("Now we are on our about section")
+        res.send(req.rootUser);
+    })
+    
 module.exports=router
