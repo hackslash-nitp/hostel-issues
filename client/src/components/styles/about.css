@@ -5,12 +5,14 @@
     width: 60%;
     top: 50%;
     left: 50%;
-    background-color: #BDDFFF;
+    background-color: hsl(203, 69%, 81%);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 10px #507e9a;
     
 }
 
 img{
-    width: 50%;
+    width: 70%;
     left: 50%;
 }
 
