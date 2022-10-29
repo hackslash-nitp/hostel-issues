@@ -43,7 +43,7 @@ const Profile = () => {
       <form method="GET">
         <div className="row">
           <div className="col-md-4">
-            <img src={Profilepic} alr="shashank" />
+            <img src={Profilepic} alt="shashank" />
           </div>
           <div className="col-md-5 mt-5">
             <h5>{userData.name}</h5>
@@ -84,4 +84,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default Profile;

@@ -1,3 +1,99 @@
-#logo{
-  width: 6rem;
+.nav a{
+  text-decoration: none;
+  color:white;
+}
+
+.nav a:hover{
+  text-decoration: none;
+  color:white;
+}
+
+.nav{
+    height:10vh;
+    background-color:#3AA1FF;
+    box-sizing: border-box;
+    padding: 0 2vw;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.logo{
+  height:8vh;
+  width: auto;
+}
+
+.activeLink{
+  border-radius:40px 40px 0 0;
+  background-color: lightblue;
+  height:8vh;
+  width:13vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: -2vh;
+} 
+
+.activeLink h3 a{
+  font-size: 1.25rem;
+}
+
+.nonActive{
+  height:8vh;
+  width: 13vw;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.navLinks{
+  height:10vh;
+  width: 58vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLinks h3{
+  color:white;
+  font-size:1.2rem;
+}
+
+.account{
+  width:8vw;
+  height:10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.account img{
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 50%;
+}
+
+.dropDownMenu{
+  width:10vw;
+  text-align: center;
+  background-color:rgba(127, 195, 218, 0.8);
+  border-radius: 0 0 10px 10px;
+  padding:1vh 0;
+  position:absolute;
+  top:10vh;
+  right:9vw;
+  display: none;
+}
+
+.dropDownMenu h3{
+  font-size: 1.3rem;
+}
+
+.dropDownMenu h3:hover{
+  transition: 0.3s ease-in-out;
+}
+
+.dropDownMenu h3:hover{
+  background-color: rgb(87, 182, 214);
 }

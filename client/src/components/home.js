@@ -5,7 +5,7 @@ import "./styles/homeBody.css";
 function Home(){
    return <div>
       <div className = "profile">
-         <h1>Welcome Shazeb Khan</h1>
+         <h1>Welcome <br/> Shazeb Khan</h1>
          <div className = "avatar">
             <img src = "https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg" alt = "user-avatar"/>
          </div>

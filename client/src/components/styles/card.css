@@ -5,6 +5,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    box-sizing: border-box;
     padding: 0 1vw;
     border-radius:20px;
     background-color: #BDDFFF;
@@ -14,7 +15,7 @@
 
 
 .box h3{
-    letter-spacing: 1.5px;
+    font-size:1.3rem;
 }
 
 .boxStatus{
@@ -28,4 +29,12 @@
     justify-content: center;
     align-items: center;
     background-color: #3AA1FF;
+}
+
+@media only screen and (max-width: 900px){
+    .box{
+       width:70vw;
+       padding: 0 2vw;
+       margin-bottom:5vh;
+    }
 }

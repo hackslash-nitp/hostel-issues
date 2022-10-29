@@ -1,18 +1,12 @@
-import React from 'react'
-import "bootstrap/dist/css/bootstrap.css"
-import Logo from "../images/logo.png"
-import { NavLink } from 'react-router-dom'
-import "./styles/navbar.css"
+import React,{useState} from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import logo from "../images/logo.png";
+import "./styles/navbar.css";
 
-const Navbar = () => {
-  return (
-    <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <img className='logo' id='logo' src={Logo} alt="Logo" />
-  < NavLink className="navbar-brand" to="/"> HOSTEL_ISSUES</NavLink>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
+function Navbar(){
+   const [isVisible,setIsVisible] = useState(false);
+   var location = useLocation().pathname;
+   var active = 1;
 
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav ml-auto">
@@ -37,9 +31,6 @@ const Navbar = () => {
       
     </ul>
   </div>
-</nav>
-   </>
-  )
 }
 
-export default Navbar
+export default Navbar;
