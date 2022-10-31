@@ -1,0 +1,59 @@
+.queryMainCard{
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+   .queryCard {
+    height: 150px;
+    width: 25vw;
+    background-color: rgb(218, 236, 247);
+    padding: 20px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+  
+  .queryCardLarge {
+    height: 150px;
+    width: 30vw;
+    padding: 20px 10px 10px 10px;
+    background-color: rgb(218, 236, 247);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+  
+  p {
+    text-align: center;
+  }
+  
+  .make-bold {
+    font-size: 1.3rem;
+    font-weight: 800;
+  }
+  
+  .Pending {
+    color: rgb(216, 204, 37);
+  }
+  
+  .Resolved {
+    color: rgb(21, 196, 56);
+  }
+  
+  .Rejected {
+    color: red;
+  }
+  
+  @media screen and (max-width: 991px) {
+    p {
+      font-size: 0.7rem;
+    }
+  
+    .make-bold {
+      font-size: 0.9rem;
+    }
+  }

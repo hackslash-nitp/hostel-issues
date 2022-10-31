@@ -37,7 +37,7 @@
   background-color: lightblue;
   height:8vh;
   width:13vw;
-  display: flex;
+  display:flex;
   justify-content: center;
   align-items: flex-end;
 } 
@@ -59,6 +59,10 @@
   border-radius: 50%;
 }
 
+.nav-link{
+  padding:0 !important;
+}
+
 .dropDownMenu{
   width:10vw;
   text-align: center !important;
@@ -76,6 +80,7 @@
 
 @media screen and (max-width:991px) {
   .navbar li img{
+    margin-top: 1rem;
     width:auto;
     max-height:13vw;
   }
@@ -85,6 +90,7 @@
     padding-left: 1rem;
     width:80vw;
     height:6vh;
+
     padding-top:8px;
     justify-content: flex-start;
     align-items: center;
