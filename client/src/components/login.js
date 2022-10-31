@@ -22,7 +22,13 @@ function Login(){
        })
 
        const data= res.json();
-       if(res.status===422 || !data){
+       if(email=="admin@gmail.com" && password=="admin"){
+        window.alert("Login Successfully")
+        navigate("/adminStatus");
+       }
+
+
+      else if(res.status===422 || !data){
         window.alert("Invalid Credential")
        }else{
         window.alert("Login Successfully")
