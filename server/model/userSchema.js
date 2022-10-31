@@ -18,7 +18,7 @@ const userSchema=new mongoose.Schema({
       required:true,
       min:10,
     },
-    address:{
+    work:{
         type:String,
         
     },

@@ -6,7 +6,7 @@ import "./styles/navbar.css";
 function Navbar(){
    var location = useLocation().pathname;
    var active = 1;
-
+   
    if(location==='/')
    active = 1;
    else if(location==="/status")
