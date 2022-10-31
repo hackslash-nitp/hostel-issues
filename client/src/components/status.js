@@ -1,7 +1,7 @@
 import React from "react";
 import QueryMainCard from "./queryMainCard";
 
-//this 'dataList' will come from backend having data like below which will be further used to build <QueryMainCard>
+//this dummy 'dataList' will come from backend having data like below which will be further used to build <QueryMainCard>
 const dataList = [
   { number: "#935680", complain: "Fan not Working", status: "Pending" },
   { number: "#236800", complain: "Water Leakage", status: "Resolved" },
