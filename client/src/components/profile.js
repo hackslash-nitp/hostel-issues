@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom";
 
 const Profile = () => {
      const [userData,setUserData]=useState({});
-   
+      
    const navigate=useNavigate();
   const callAboutPage= async()=>{
      try {
@@ -24,8 +24,7 @@ const Profile = () => {
           const error=new Error(res.error);
           throw error;
         }
-       setUserData(data);
-
+        setUserData(data);
      } catch (error) {
       navigate("/login")
          console.log(error);
@@ -33,10 +32,11 @@ const Profile = () => {
   }
 
    useEffect(()=>{
+    
       callAboutPage();
    },[])
 
-
+    
   return (
     <>
      <div className="container emp-profile mb-5">

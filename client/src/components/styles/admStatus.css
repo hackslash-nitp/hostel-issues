@@ -1,0 +1,91 @@
+
+/* due to this our navbar have some problems*/
+
+*{
+    margin: auto;
+    padding: 0;
+}
+
+.status-heading{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.profile-pic{
+    width: 30%;
+}
+
+.status-main-box{
+    width: 80%;
+    background-color: rgba(215, 215, 236, 0.801);
+
+}
+
+.status-block-cover{
+    margin:-4px;
+}
+
+.std-info{
+    width: 80%;;
+    padding: 3px;
+   
+}
+
+*{
+    margin: auto;
+    padding: 0;
+}
+
+.status-heading{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.profile-pic{
+    width: 30%;
+}
+
+.status-main-box{
+    width: 80%;
+    
+}
+
+.status-block-cover{
+    margin:-4px;
+}
+
+.std-info{
+    width: 80%;;
+    padding: 3px;
+   
+}
+
+.info{
+    margin:auto
+}
+
+.status-button{
+    display: inline-block;
+    
+}
+
+
+.status-button{
+   display: block;
+    
+}
+
+.status-accept{
+    background-color: green;
+    width: 5rem;
+}
+
+.status-reject{
+    background-color: red;
+    width: 5rem;
+}
+.status-complete{
+    background-color:yellow;
+    width: 6rem;
+    margin-bottom: 3%;
+}
