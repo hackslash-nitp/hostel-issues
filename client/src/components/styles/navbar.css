@@ -32,6 +32,10 @@
   margin-left:5vw;
 }
 
+.nav-link{
+  padding: 0 !important;
+}
+
 .activeLink{
   border-radius:40px 40px 0 0;
   background-color: lightblue;
