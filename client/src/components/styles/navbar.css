@@ -1,26 +1,35 @@
-.nav a{
+.navbar{
+  padding:0.5rem 0 0 0 !important;
+}
+
+.navbar a{
   text-decoration: none;
   color:white;
 }
 
-.nav a:hover{
+.navbar a:hover{
   text-decoration: none;
   color:white;
-}
-
-.nav{
-    height:10vh;
-    background-color:#3AA1FF;
-    box-sizing: border-box;
-    padding: 0 2vw;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
 }
 
 .logo{
   height:8vh;
   width: auto;
+}
+
+/* To change the hamburger to white color */
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar h3{
+  font-size: 1.3rem;
+}
+
+.navLinks{
+  margin-left:5vw;
 }
 
 .activeLink{
@@ -31,12 +40,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin-bottom: -2vh;
 } 
-
-.activeLink h3 a{
-  font-size: 1.25rem;
-}
 
 .nonActive{
   height:8vh;
@@ -46,48 +50,20 @@
   align-items:center;
 }
 
-.navLinks{
-  height:10vh;
-  width: 58vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.dropdown{
+  margin-left:2vw;
 }
 
-.navLinks h3{
-  color:white;
-  font-size:1.2rem;
-}
-
-.account{
-  width:8vw;
-  height:10vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.account img{
-  max-width: 90%;
-  max-height: 90%;
+.navbar li img{
+  max-height: 4vw;
   border-radius: 50%;
 }
 
 .dropDownMenu{
   width:10vw;
-  text-align: center;
-  background-color:rgba(127, 195, 218, 0.8);
+  text-align: center !important;
+  background-color:rgba(127, 195, 218, 0.8) !important;
   border-radius: 0 0 10px 10px;
-  padding:1vh 0;
-  position:absolute;
-  top:10vh;
-  right:9vw;
-  display: none;
-}
-
-.dropDownMenu h3{
-  font-size: 1.3rem;
 }
 
 .dropDownMenu h3:hover{
@@ -96,4 +72,26 @@
 
 .dropDownMenu h3:hover{
   background-color: rgb(87, 182, 214);
+}
+
+@media screen and (max-width:991px) {
+  .navbar li img{
+    width:auto;
+    max-height:13vw;
+  }
+
+  .activeLink{
+    border-radius: 0;
+    padding-left: 1rem;
+    width:80vw;
+    height:6vh;
+    padding-top:8px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .nonActive{
+    height:6vh;
+    justify-content: flex-start;
+  }
 }
