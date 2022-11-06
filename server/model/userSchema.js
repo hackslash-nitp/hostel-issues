@@ -37,7 +37,33 @@ const userSchema=new mongoose.Schema({
         required:true
         }
     }
-    ]
+    ],
+    date:{
+        type:Date,
+        default:Date.now
+    },
+    complain:[
+        {
+          hostel_name:{
+            type:String,
+            requierd:true
+          },
+          room_no:{
+            type:String,
+            required:true
+          },
+       issue:{
+        type:String,
+        require:true
+       },
+       message:{
+        type:String,
+        required:true
+       }
+        }
+    ],
+    total_complains:Number
+
 })
 
  //hashing the password 
@@ -61,6 +87,22 @@ userSchema.pre('save',async function (next){
         console.log(error)
     }
   }
+
+  // store the complains 
+   userSchema.methods.addComplain= async  function(hostel_name,room_no,issue,message){
+    try {
+        this.complain=this.complain.concat({hostel_name,room_no,issue,message});
+        // saving the update part on database
+       
+        await this.save();
+        return this.message
+
+
+    } catch (error) {
+        console.log(error)
+    }
+   }
+
 
 const User= mongoose.model('USER',userSchema);
  module.exports=User;

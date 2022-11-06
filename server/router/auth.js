@@ -1,8 +1,6 @@
 
 
-const e = require('express');
 const express=require('express');
-const { estimatedDocumentCount } = require('../model/userSchema');
 const User = require('../model/userSchema');
 const router=express.Router();
 const jwt= require ("jsonwebtoken")
@@ -11,6 +9,7 @@ const cookie=require ('cookie-parser')
 require("../model/userSchema")
 const authenticate =require("../middleware/authenticate");
 const cookieParser = require('cookie-parser');
+const authenticate2= require("../middleware/authenticate2")
 
 router.get('/',(req,res)=>{ 
     res.send(`hello world from the server router js by using the router part on our website`)
@@ -100,16 +99,57 @@ try {
 })
 
 // for the contact form where we find our inforamation for our neeed
-router.post("/contact",(req,res)=>{
-    const {name,email,phone,work,password,cpassword}=req.body;
-    console.log(name,email)
-})
+// router.post("/contact",(req,res)=>{
+//     const {name,email,phone,work,password,cpassword}=req.body;
+//     console.log(name,email)
+// })
 
 // about page
  router.use(cookieParser());
 router.get('/about',authenticate,(req,res)=>{
         console.log("Now we are on our about section")
         res.send(req.rootUser);
+    
     })
+
+    router.post("/complain",authenticate, async(req,res)=>{
+      try {
+        const {hostel_name,room_no,issue,message}=req.body;
+        console.log(hostel_name,room_no,issue,message)
+        if(!hostel_name || !message || !room_no || !issue){
+            console.log("error in the complain server part")
+            return res.json({error:"Please fill the complai form"})
+        }
+
+        const userComplain= await User.findOne({_id:req.userID});
+        if(userComplain){
+            const userMessage= await userComplain.addComplain(hostel_name,room_no,issue,message);
+            await userComplain.save();
+            res.status(201).json("user complain successfully submitted")
+        }
+
+
+      } catch (error) {
+        console.log(error);
+      } 
+    })
+
+    //status page for both user and admin
+    router.use(cookieParser());
+    router.get("/status",authenticate2,(req,res)=>{
+        console.log("now we are on the status section")
+        res.send(req.rootUser);
+    })
+
+    //logout page
+    router.use(cookieParser());
+    router.get('/logout',(req,res)=>{
+            console.log("Hello my logout page")
+            res.clearCookie("jwtoken",{path:"/"})
+            res.status(200).send("User logout");
+        
+        })
+
+
     
 module.exports=router

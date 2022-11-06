@@ -5,7 +5,7 @@ function QueryMainCard(props) {
   return (
     <div className="queryMainCard">
       <div className="queryCard">
-        <p>Complaint No.</p>
+        <p>Complaint Id.</p>
         <p className="make-bold">{props.numberText}</p>
       </div>
 

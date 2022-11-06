@@ -10,20 +10,20 @@ const Authenticate= async(req,res,next)=>{
         // verified token
         const verifyToken=jwt.verify(token,process.env.SECRET_KEY);
 
+        
         const rootUser=await User.findOne({_id:verifyToken._id,"tokens.token":token});
 
-        if(!rootUser){throw new Error("User not found")}
 
+        if(!rootUser){throw new Error("User not found")}
         req.token=token;
         req.rootUser=rootUser;
         req.userID=rootUser._id;
-
         next();
 
 
 
     } catch (err) {
-        res.status(401).send(("Unauthorized no. of token"))
+        res.status(422).send(("Unauthorized no. of token"))
         console.log(err);
     }
 
