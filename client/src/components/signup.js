@@ -20,7 +20,8 @@ const Signup = () => {
    const PostData= async(e)=>{
     e.preventDefault();
  
-    const {name,email,work,phone,password,cpassword}=user;
+    // array destructuring
+    const {name,email,phone,branch_name,roll_no,hostel_name,room_no,password,cpassword}=user;
 
    const res= await fetch("/register",{
     method:"POST",
@@ -28,7 +29,7 @@ const Signup = () => {
       "Content-Type":"application/json"
     },
     body:JSON.stringify({
-      name,email,work,phone,password,cpassword
+      name,email,phone,branch_name,roll_no,hostel_name,room_no,password,cpassword
     })
    })
   const data=await res.json();
@@ -73,10 +74,27 @@ const Signup = () => {
                 value={user.phone}
                 onChange={handleInputs}
                 />
-                <input type="text" placeholder='Your Profession' name='work' id='work' autoComplete='off'
-                value={user.work}
+                
+
+                <input type="text" placeholder='Your Branch' name='branch_name' id='branch_name' autoComplete='off'
+                value={user.branch_name}
                 onChange={handleInputs}
                 />
+                <input type="text" placeholder='Your Roll number' name='roll_no' id='roll_no' autoComplete='off'
+                value={user.roll_no}
+                onChange={handleInputs}
+                />
+                <input type="text" placeholder='Your hostel name' name='hostel_name' id='hostel_name' autoComplete='off'
+                value={user.hostel_name}
+                onChange={handleInputs}
+                />
+                <input type="text" placeholder='Your room no,' name='room_no' id='room_no' autoComplete='off'
+                value={user.room_no}
+                onChange={handleInputs}
+                />
+
+
+
                 <input type="password" placeholder='Password' name='password' id='password' autoComplete='off'
                 value={user.password}
                 onChange={handleInputs}

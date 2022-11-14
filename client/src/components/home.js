@@ -19,7 +19,7 @@ function Home(){
            credentials:"include"
        });
        const data= await res.json();
-        console.log(data);
+       // console.log(data);
       
         if(!res.status===200){
           const error=new Error(res.error);
@@ -32,6 +32,27 @@ function Home(){
      }
   }
 
+    //getting different-different update part
+      let count=0;
+      let acceptComplains=0;
+      let rejectedComplains=0;
+      let completedComplains=0;
+      let pendingComplains=0;
+      // for(let cmp of userData.complain){
+      //    if(userData.complain[count].complain_status==="accepted") acceptComplains++;
+      //    if(userData.complain[count].complain_status==="rejected") rejectedComlains++;
+      //    if(userData.complain[count].complain_status==="completed") completedComplains++;
+      //    if(userData.complain[count].complain_status==="pending") pendingComplains++;
+      //    count++;
+      // }
+
+      userData.complain?.map((data)=>{
+         if(data.complain_status==="accepted") acceptComplains++;
+         if(data.complain_status==="rejected") rejectedComplains++;
+         if(data.complain_status==="completed") completedComplains++;
+         if(data.complain_status==="pending") pendingComplains++;
+      })
+      let totalComplains=acceptComplains+pendingComplains+completedComplains+rejectedComplains
    useEffect(()=>{
     
       homeInfo();
@@ -46,10 +67,10 @@ function Home(){
          </div>
       </div>
       <div className="status">
-      <Card text = "Number of complains filed" num = "5" col = "purple"/> 
-      <Card text = "Number of complains resolved" num = "3" col = "green"/>
-      <Card text = "Number of complains rejected" num = "2" col = "red"/>
-      <Card text = "Number of complains pending" num = "0" col = "blue"/>
+      <Card text = "Number of complains filed" num ={totalComplains} col = "purple"/> 
+      <Card text = "Number of complains resolved" num ={completedComplains} col = "green"/>
+      <Card text = "Number of complains rejected" num = {rejectedComplains} col = "red"/>
+      <Card text = "Number of complains pending" num = {pendingComplains} col = "blue"/>
       </div>
    </div>
 }

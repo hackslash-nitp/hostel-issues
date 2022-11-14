@@ -5,16 +5,93 @@ import "./styles/admStatus.css";
 
 const StatusBox = (props) => {
 
-  const acceptComplain=()=>{
-
+ // send the update to the backend
+  const std={_id:props.issue};
+  const acceptComplain=async (e)=>{
+    console.log(props.id)
+    const _id=props.id;
+    const complain_status="accepted";
+    const roll_no=props.roll_no;
+    e.preventDefault();
+    const res= await fetch("/adminResponse",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+        complain_status,roll_no,_id
+      })
+     })
+     const data=await res.json();
+  if(res.status!=201 || !data){
+    window.alert("Something wrong");
+    console.log("Something wrong");
+  }else{
+    window.alert("Response send Successfully");
+    console.log("Reaction send Successfully");
   }
 
-  const rejectComplain=()=>{
+}
 
-  }
-  const completeComplain=()=>{
 
-  }
+
+const rejectComplain=async (e)=>{
+  console.log(props.id)
+  const _id=props.id;
+  const complain_status="rejected";
+  const roll_no=props.roll_no;
+  e.preventDefault();
+  const res= await fetch("/adminResponse",{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+      complain_status,roll_no,_id
+    })
+   })
+   const data=await res.json();
+if(res.status!=201 || !data){
+  window.alert("Something wrong");
+  console.log("Something wrong");
+}else{
+  window.alert("Response send Successfully");
+  console.log("Reaction send Successfully");
+}
+
+}
+
+
+
+
+const completeComplain=async (e)=>{
+  console.log(props.id)
+  const _id=props.id;
+  const complain_status="completed";
+  const roll_no=props.roll_no;
+  e.preventDefault();
+  const res= await fetch("/adminResponse",{
+    method:"POST",
+    headers:{
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+      complain_status,roll_no,_id
+    })
+   })
+   const data=await res.json();
+if(res.status!=201 || !data){
+  window.alert("Something wrong");
+  console.log("Something wrong");
+}else{
+  window.alert("Response send Successfully");
+  console.log("Reaction send Successfully");
+}
+
+}
+   
+  
+
   return (
     <>
     <div className='status-main-box mt-5 mb-5'>
@@ -22,7 +99,7 @@ const StatusBox = (props) => {
         <div className="col-md-3">
         <img src={Profilepic} alt="shashank"  className='pro-pictue'/>  
         <div className='std-info'>
-        <p className='info'>Shashank yadav</p>
+        <p className='info'>{props.name}</p>
         <p className='info'>HOSTEL:{props.hostel_name}</p>
         <p className='info'>ROOM NO.:{props.room_no}</p>
         <p className='info'></p>

@@ -55,9 +55,9 @@ function Status() {
       {userData.complain?.map((data) => (
         <QueryMainCard
           key = {data._id}
-          numberText={data._id}
+          numberText={data.issue}
           complainText={data.message}
-          statusText={data._id}
+          statusText={data.complain_status}
         ></QueryMainCard>
       ))}
       </div>

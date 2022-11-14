@@ -183,36 +183,69 @@
 // export default Complain;
 
 
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Pic from "../images/signup_pic.jpg"
 import "./styles/signup.css"
 
 const Complain = () => {
 
-  const [user,setUser]=useState({
-    hostel_name:"",room_no:"",issue:"",message:""});
+   const [user,setUser]=useState({
+     hostel_name:"",room_no:"",issue:"",message:""});
 
-    let name,value;
-    const handleInputs=(e)=>{
-    console.log(e);
-    name=e.target.name;
-    value=e.target.value;
-    setUser({...user,[name]:value});
+  //   let name,value;
+  //   const handleInputs=(e)=>{
+  //   console.log(e);
+  //   name=e.target.name;
+  //   value=e.target.value;
+  //   setUser({...user,[name]:value});
+   
+  
+  const callComplain= async()=>{
+    try {
+      const res= await fetch('/getData',{
+          method:"GET",
+          headers:{
+           "Content-Type":"application/json"
+          },
+      });
+      const data= await res.json();
+       console.log(data);
+     
+       if(!res.status===200){
+         const error=new Error(res.error);
+         throw error;
+       }
+       setUser({...user,name:data.name,roll_no:data.roll_no,hostel_name:data.hostel_name,room_no:data.room_no});
+    } catch (error) {
+        console.log(error);
     }
+ }
+
+  useEffect(()=>{
+   
+     callComplain();
+  },[])
+ 
+  // we are storing data on states
+  const handleInputs=(e)=>{
+    const name=e.target.name;
+    const value=e.target.value;
+    setUser({...user,[name]:value});
+  }
 
 
     // send the data to the backend
    const complainForm= async(e)=>{
     e.preventDefault();
     
-    const {hostel_name,room_no,issue,message}=user;
-   const res= await fetch("/complain",{
+    const {name,roll_no,hostel_name,room_no,issue,message}=user;
+    const res= await fetch("/complain",{
     method:"POST",
     headers:{
       "Content-Type":"application/json"
     },
     body:JSON.stringify({
-      hostel_name,room_no,issue,message
+      name,roll_no,hostel_name,room_no,issue,message
     })
    })
   const data=await res.json();
@@ -222,7 +255,7 @@ const Complain = () => {
   }else{
     window.alert("Complain send Successfully");
     console.log("Complain send Successfully");
-    setUser({...user,hostel_name:"",room_no:"",issue:"",message:""})
+    setUser({...user,issue:"",message:""})
   }
   }
 
@@ -244,6 +277,18 @@ const Complain = () => {
                 <br/>
                 <h3>We are here to help you!</h3>
                 <br/>
+        
+                <input type="text" placeholder='Your Name' name='name' id='name' autoComplete='off'
+                value={user.name}
+                onChange={handleInputs}
+                />
+                <input type="text" placeholder='Your Roll No' name='roll_no' id='roll_no' autoComplete='off'
+                value={user.roll_no}
+                onChange={handleInputs}
+                />
+                
+
+
                 <input type="text" placeholder='Your Hostel Name' name='hostel_name' id='hname' autoComplete='off'
                 value={user.hostel_name}
                 onChange={handleInputs}
@@ -262,6 +307,7 @@ const Complain = () => {
                 />
                 <br/>
                 <br/>
+
                 <div className="form-group form-button">
                <input type="submit" name="signup" id="signup" className='form-submit' value='SEND'  onClick={complainForm}/>
                </div>

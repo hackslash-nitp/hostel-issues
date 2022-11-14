@@ -5,12 +5,12 @@ function QueryMainCard(props) {
   return (
     <div className="queryMainCard">
       <div className="queryCard">
-        <p>Complaint Id.</p>
+        <p>Complaint Issue.</p>
         <p className="make-bold">{props.numberText}</p>
       </div>
 
       <div className="queryCardLarge">
-        <p>Complain</p>
+        <p>Complain Description:</p>
         <p className="make-bold">{props.complainText}</p>
       </div>
 

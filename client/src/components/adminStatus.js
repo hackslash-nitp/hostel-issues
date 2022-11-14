@@ -52,6 +52,9 @@ const AdminStatus = () => {
     <div>
       {flattened?.map((data) => (
         <StatusBox
+        id={data._id}
+        roll_no={data.roll_no}
+        name={data.name}
         hostel_name={data.hostel_name}
         room_no={data.room_no}
         issue={data.issue}

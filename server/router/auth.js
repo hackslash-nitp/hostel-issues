@@ -40,7 +40,7 @@ router.get('/',(req,res)=>{
 //// using async and await
 
 router.post('/register',async (req,res)=>{
-   const{name,email,phone,work,password,cpassword}=req.body;
+   const{name,email,phone,branch_name,roll_no,hostel_name,room_no,password,cpassword}=req.body;
    if(!name || !email){
     return res.status(422).json({error:"plz filled the field properly"});
    }
@@ -52,7 +52,7 @@ router.post('/register',async (req,res)=>{
         if(userExist){
             return res.status(422).json({error:"user already exist"});
         }
-        const user =new User({name,email,phone,work,password,cpassword});
+        const user =new User({name,email,phone,branch_name,roll_no,hostel_name,room_no,password,cpassword});
        const userRegistered= await user.save();
        if(userRegistered){
             res.status(201).json({Message:"User registration successfull"});
@@ -112,18 +112,23 @@ router.get('/about',authenticate,(req,res)=>{
     
     })
 
+    // getting userdata
+    router.get('/getData',authenticate,(req,res)=>{
+        console.log("Now we are on our about section")
+        res.send(req.rootUser);
+    })
+
     router.post("/complain",authenticate, async(req,res)=>{
       try {
-        const {hostel_name,room_no,issue,message}=req.body;
-        console.log(hostel_name,room_no,issue,message)
+        const {name,roll_no,hostel_name,room_no,issue,message}=req.body;
+        console.log(name,roll_no,hostel_name,room_no,issue,message)
         if(!hostel_name || !message || !room_no || !issue){
             console.log("error in the complain server part")
-            return res.json({error:"Please fill the complai form"})
+            return res.json({error:"Please fill the complain form"})
         }
-
         const userComplain= await User.findOne({_id:req.userID});
         if(userComplain){
-            const userMessage= await userComplain.addComplain(hostel_name,room_no,issue,message);
+            const userMessage= await userComplain.addComplain(name,roll_no,hostel_name,room_no,issue,message);
             await userComplain.save();
             res.status(201).json("user complain successfully submitted")
         }
@@ -149,6 +154,32 @@ router.get('/about',authenticate,(req,res)=>{
             res.status(200).send("User logout");
         
         })
+
+        // COMPLAIN RESPONSE FOR ADMIN
+        router.post("/adminResponse",authenticate, async(req,res)=>{
+            try {
+                const {complain_status,roll_no,_id}=req.body;
+                console.log(complain_status,roll_no)
+                if(!complain_status || !roll_no || !_id){
+                    console.log("error in response part of the page")
+                    return res.json({error:"Please fill the staus carefully"})
+                }
+               // const id="Object"+"('"+_id+"')";
+                console.log(_id)
+                //try to update the value
+                const userComplain= await User.findOne({roll_no});
+                console.log("this is "+userComplain)
+                if(userComplain){
+                    
+                    const userMessage= await userComplain.addComplainStatus(complain_status,_id,roll_no);
+                    await userComplain.save();
+                    res.status(201).json("admin response successfully submitted")
+                }
+        
+              } catch (error) {
+                console.log(error);
+              } 
+          })
 
 
     
