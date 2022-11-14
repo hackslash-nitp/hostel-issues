@@ -8,7 +8,9 @@ import Login from "./components/login.js";
 import Profile from "./components/profile.js";
 import Signup from "./components/signup.js";
 import AdminStatus from "./components/adminStatus.js";
-import IssueCard from "./components/issueCard.js";
+
+import Logout from "./components/logout.js";
+
 
 
 import { BrowserRouter,Routes,Route} from "react-router-dom";
@@ -27,6 +29,7 @@ function App(){
         <Route path = "/signup" element = {<Signup/>}/>
         <Route path = "/profile" element = {<Profile/>}/>
         <Route path = "/adminStatus" element = {<AdminStatus/>}/>
+        <Route path = "/logout" element = {<Logout/>}/>
     </Routes>
     </BrowserRouter>
 

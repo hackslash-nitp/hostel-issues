@@ -20,6 +20,7 @@ const Profile = () => {
        });
        const data= await res.json();
         console.log(data);
+      
         if(!res.status===200){
           const error=new Error(res.error);
           throw error;
@@ -47,7 +48,7 @@ const Profile = () => {
           </div>
           <div className="col-md-5 mt-5">
             <h5>{userData.name}</h5>
-            <h6>{userData.work}</h6>
+            <h6>Student</h6>
           </div>
           <div className="col-md-1 mt-1">
           <input type="submit" className='profile-edit-btn' name='btnAddMore' value="Edit Profile"/>
@@ -55,18 +56,18 @@ const Profile = () => {
         </div>
         <div className="row">
           <div className="col-md-6 mt-2">
-          <p><b>BRANCH:</b> Electronics and Communication Engineering</p>
+          <p><b>BRANCH:</b> {userData.branch_name}</p>
           </div>
           <div className="col-md-6 mt-1">
-          <p><b>ROLL NO:</b> 2104125</p>
+          <p><b>ROLL NO:</b>{userData.roll_no}</p>
           </div>
         </div>
         <div className="row">
           <div className="col-md-6 mt-2">
-          <p><b>HOSTEL:</b> Brahmaputra Hostel</p>
+          <p><b>HOSTEL:</b> {userData.hostel_name}</p>
           </div>
           <div className="col-md-6 mt-1">
-          <p><b>ROOM NO:</b> E-403</p>
+          <p><b>ROOM NO:</b>{userData.room_no}</p>
           </div>
         </div>
         <div className="row">

@@ -50,7 +50,7 @@ function Navbar(){
         <h3><Link to = "/login">Account</Link></h3>
         <h3><Link to = "/login">Settings</Link></h3>
         <h3><Link to = "/signup">Signup</Link></h3>
-        <h3><Link to = "/login">Logout</Link></h3>
+        <h3><Link to = "/logout">Logout</Link></h3>
         <h3><Link to = "/adminStatus">Admin Status</Link></h3>
         </div>
       </li>

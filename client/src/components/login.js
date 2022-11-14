@@ -3,6 +3,7 @@ import Log_pic from "../images/login_pic.jpg"
 import "./styles/signup.css"
 import { NavLink,useNavigate } from 'react-router-dom'
 
+
 function Login(){
      const navigate=useNavigate();
 

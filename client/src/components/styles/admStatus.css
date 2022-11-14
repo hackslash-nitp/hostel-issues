@@ -1,7 +1,7 @@
 
 /* due to this our navbar have some problems*/
 
-/* *{
+ *{
     margin: auto;
     padding: 0;
 }
@@ -11,9 +11,10 @@
     margin-top: 2rem;
 }
 
-.profile-pic{
+.pro-picture{
     width: 30%;
 }
+
 
 .status-main-box{
     width: 80%;
@@ -65,27 +66,41 @@
 }
 
 .status-button{
-    display: inline-block;
-    
-}
+   display: inline-block;
 
-
-.status-button{
-   display: block;
-    
 }
 
 .status-accept{
-    background-color: green;
-    width: 5rem;
+    background-color: rgb(141, 245, 141);
+    width: 40%;
+    margin-bottom: 5%;
 }
 
 .status-reject{
-    background-color: red;
-    width: 5rem;
+    background-color: rgb(237, 145, 145);
+    width: 40%;
+    margin-bottom: 5%;
 }
 .status-complete{
-    background-color:yellow;
-    width: 6rem;
-    margin-bottom: 3%;
-} */
+    background-color:rgb(245, 245, 178);
+    width: 40%;
+    margin-bottom: 5%;
+} 
+
+.status-accept:hover{
+    width: 50%;
+    background-color: green;
+   
+}
+
+.status-reject:hover{
+    width: 50%;
+    background-color: red;
+   
+}
+
+.status-complete:hover{
+    width: 50%;
+    background-color: yellow;
+   
+}
