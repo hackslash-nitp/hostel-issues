@@ -16,9 +16,7 @@ Hostel Issue is an innovative web application that aims to revolutionize the com
 - [Database Schema](#database-schema)
 - [Installation and Setup](#installation-and-setup)
 - [Usage](#usage)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Introduction
 
